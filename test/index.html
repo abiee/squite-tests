@@ -11,17 +11,44 @@
     <script src="bower_components/mocha/mocha.js"></script>
     <script>mocha.setup('bdd')</script>
     <script src="bower_components/chai/chai.js"></script>
+    <script src="../bower_components/sinon-chai/lib/sinon-chai.js"></script>
     <script>
         var assert = chai.assert;
         var expect = chai.expect;
         var should = chai.should();
     </script>
 
-    <!-- include source files here... -->
+    <!-- sinon -->
+    <script src="../bower_components/sinon/lib/sinon.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/assert.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/behavior.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/call.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/collection.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/match.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/spy.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/mock.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/sandbox.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/stub.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/test.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/test_case.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/event.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/fake_server.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/fake_server_with_clock.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/fake_timers.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/fake_xml_http_request.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/timers_ie.js"></script>
+    <script src="../bower_components/sinon/lib/sinon/util/xhr_ie.js"></script>
+
+    <!-- load configure options... -->
+    <script data-main="config" src="../bower_components/requirejs/require.js"></script>
 
     <!-- include spec files here... -->
-    <script src="spec/test.js"></script>
 
-    <script>mocha.run()</script>
+    <script>
+        require(['config', 'spec/test'], function () {
+            if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+            else { mocha.run(); }
+        });
+    </script>
 </body>
 </html>

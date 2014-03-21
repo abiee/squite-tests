@@ -97,6 +97,18 @@ module.exports = function (grunt) {
             }
         },
 
+        // For testing with phanthom
+        mocha_phantomjs: {
+            test: {
+                options: {
+                    urls: [
+                        'http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>'
+                    ]
+                }
+            }
+        },
+
+
         // Empties folders to start fresh
         clean: {
             dist: {
@@ -337,7 +349,8 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'connect:test',
-            'mocha'
+            'mocha_phantomjs',
+            'watch'
         ]);
     });
 
