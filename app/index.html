@@ -37,15 +37,13 @@
 
             <div class="jumbotron">
                 <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
+                <p class="lead">Just an example project to test Squire.js. Type on your terminal "grunt test" to perfom tests.</p>
                 <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
             </div>
 
-            <div class="row marketing">
-                <div id="input" class="col-lg-6">
-                </div>
-                <div id="echo" class="col-lg-6">
-                </div>
+            <div class="row">
+                <div id="input" class="col-md-6"></div>
+                <div id="echo" class="col-md-6"></div>
             </div>
 
             <div class="footer">
@@ -57,14 +55,7 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/requirejs/require.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/backbone/backbone.js"></script>
-        <script src="bower_components/backbone.babysitter/lib/backbone.babysitter.js"></script>
-        <script src="bower_components/marionette/lib/backbone.marionette.js"></script>
-        <script src="bower_components/marionette/lib/core/amd/backbone.marionette.js"></script>
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -74,7 +65,7 @@
 
         <script id="echo-template" type="text/template">
             <% if(text.length > 0) { %>
-                <h3><%= text %></h3>
+                <%= text %>
             <% } else { %>
                 <span>Text will be showed here</span>
             <% } %>
